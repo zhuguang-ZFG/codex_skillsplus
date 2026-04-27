@@ -1,4 +1,4 @@
-# Codex Skills Plus
+﻿# Codex Skills Plus
 
 English | [简体中文](./README.zh.md)
 
@@ -7,12 +7,15 @@ English | [简体中文](./README.zh.md)
 
 Curated Codex skills for more reliable coding workflows. This repository packages reusable skill folders that help coding agents think more clearly, change less, and verify more.
 
+![Codex Skills Plus social preview](./docs/assets/social-preview.png)
+
 ## Highlights
 
 - Ready-to-use Codex skill folders
 - Focus on practical coding workflows
 - English and Chinese documentation
 - Lightweight skill bodies with on-demand references
+- Browseable skill catalog at [skills/index.md](./skills/index.md)
 
 ## Included Skills
 
@@ -62,6 +65,8 @@ Example:
 使用 $karpathy-guidelines-zh 先审视这个改动方案，再开始实现。
 ```
 
+See also: [Skill Catalog](./skills/index.md)
+
 ## Why This Exists
 
 Andrej Karpathy has pointed out several recurring problems in LLM-assisted coding:
@@ -77,15 +82,19 @@ This repository turns those observations into Codex-compatible skills that can b
 
 ```text
 codex_skillsplus/
+├─ docs/
+│  └─ assets/
+│     └─ social-preview.png
 ├─ skills/
 │  ├─ karpathy-guidelines/
 │  │  ├─ SKILL.md
 │  │  ├─ agents/openai.yaml
 │  │  └─ references/examples.md
-│  └─ karpathy-guidelines-zh/
-│     ├─ SKILL.md
-│     ├─ agents/openai.yaml
-│     └─ references/examples.md
+│  ├─ karpathy-guidelines-zh/
+│  │  ├─ SKILL.md
+│  │  ├─ agents/openai.yaml
+│  │  └─ references/examples.md
+│  └─ index.md
 ├─ README.md
 ├─ README.zh.md
 └─ LICENSE
