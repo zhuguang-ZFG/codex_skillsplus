@@ -160,6 +160,22 @@ $CODEX_HOME/skills/
 - [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json)：Claude 插件定义
 - [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json)：插件市场元数据
 
+## GitHub 同步插件
+
+仓库里还增加了一个插件：[plugins/codex-skillsplus-sync](./plugins/codex-skillsplus-sync)。它会从 GitHub 仓库把这些内容同步到当前项目：
+
+- `.codex/skills/karpathy-guidelines`
+- `.codex/skills/karpathy-guidelines-zh`
+- `.cursor/rules/karpathy-guidelines.mdc`
+- `CLAUDE.md`
+- `.codex-skillsplus/EXAMPLES.md`
+
+注意：
+
+- 插件目前通过 `PostToolUse` hook 在写入后自动刷新，同时也带一个手动同步 skill
+- “安装时立即同步”或“会话刚开始就同步”是否能完全自动，取决于运行时对 hook 的支持
+- 项目根目录检测采用保守策略，检测不到时会安全退出，不会乱写路径
+
 ## 附带参考内容
 
 每个 skill 都让 `SKILL.md` 保持简洁，把更丰富的案例放在：

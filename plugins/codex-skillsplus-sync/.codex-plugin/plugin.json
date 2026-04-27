@@ -1,0 +1,42 @@
+{
+  "name": "codex-skillsplus-sync",
+  "version": "1.0.0",
+  "description": "Sync Karpathy-inspired project guidance from the codex_skillsplus GitHub repository into the current project.",
+  "author": {
+    "name": "zhuguang-ZFG",
+    "url": "https://github.com/zhuguang-ZFG"
+  },
+  "homepage": "https://github.com/zhuguang-ZFG/codex_skillsplus",
+  "repository": "https://github.com/zhuguang-ZFG/codex_skillsplus",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "karpathy",
+    "codex",
+    "sync",
+    "github"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "interface": {
+    "displayName": "Codex Skills Plus Sync",
+    "shortDescription": "Sync GitHub-hosted coding guidance into the current project.",
+    "longDescription": "Copies Karpathy-inspired guidance files and skill folders from the codex_skillsplus GitHub repository into the active project, and re-syncs them after file edits.",
+    "developerName": "zhuguang-ZFG",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Sync codex_skillsplus guidance into this project from GitHub.",
+      "Refresh Karpathy project rules from the codex_skillsplus repository.",
+      "Bootstrap this project with codex_skillsplus guidance files."
+    ],
+    "websiteURL": "https://github.com/zhuguang-ZFG/codex_skillsplus",
+    "privacyPolicyURL": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+    "termsOfServiceURL": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+    "brandColor": "#174EA6"
+  }
+}

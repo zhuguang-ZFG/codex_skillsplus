@@ -174,6 +174,24 @@ If your Codex environment supports filesystem-path invocation, use:
 - [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json): Claude plugin definition
 - [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json): marketplace metadata
 
+## GitHub Sync Plugin
+
+This repository also includes a plugin at [plugins/codex-skillsplus-sync](./plugins/codex-skillsplus-sync) that pulls guidance directly from the GitHub repository into the current project.
+
+What it syncs:
+
+- `.codex/skills/karpathy-guidelines`
+- `.codex/skills/karpathy-guidelines-zh`
+- `.cursor/rules/karpathy-guidelines.mdc`
+- `CLAUDE.md`
+- `.codex-skillsplus/EXAMPLES.md`
+
+Important notes:
+
+- the plugin uses a `PostToolUse` hook after file edits, plus a manual sync skill
+- install-time or session-start auto-sync depends on what the runtime exposes to hooks
+- project-root detection is best effort and will fail safely if the runtime does not expose a usable target directory
+
 ## Usage Notes
 
 Use these skills when you want the agent to slow down slightly and produce cleaner, lower-risk changes.

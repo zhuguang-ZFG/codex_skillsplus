@@ -1,0 +1,20 @@
+{
+  "name": "codex-skillsplus-local",
+  "interface": {
+    "displayName": "Codex Skills Plus Local Plugins"
+  },
+  "plugins": [
+    {
+      "name": "codex-skillsplus-sync",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codex-skillsplus-sync"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Coding"
+    }
+  ]
+}

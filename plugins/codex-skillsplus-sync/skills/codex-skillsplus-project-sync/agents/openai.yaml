@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Skills Plus Project Sync"
+  short_description: "Sync GitHub-hosted Karpathy guidance into the current project."
+  default_prompt: "Use $codex-skillsplus-project-sync to refresh this project's guidance files from the codex_skillsplus GitHub repository."
