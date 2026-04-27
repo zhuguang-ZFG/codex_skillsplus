@@ -2,47 +2,87 @@
 
 English | [简体中文](./README.zh.md)
 
-Curated Codex skills for more reliable coding workflows. This repository currently includes a Karpathy-inspired skill that helps coding agents avoid common LLM failure modes such as hidden assumptions, overengineering, broad unrelated edits, and weak verification.
+[![Skills](https://img.shields.io/badge/skills-2-1f6feb)](./skills)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
-## Included Skill
+Curated Codex skills for more reliable coding workflows. This repository packages reusable skill folders that help coding agents think more clearly, change less, and verify more.
+
+## Highlights
+
+- Ready-to-use Codex skill folders
+- Focus on practical coding workflows
+- English and Chinese documentation
+- Lightweight skill bodies with on-demand references
+
+## Included Skills
 
 ### `karpathy-guidelines`
 
 Path: [skills/karpathy-guidelines](./skills/karpathy-guidelines)
 
-This skill is a behavioral guardrail for coding tasks. It is designed for situations where the agent should:
+An English-first behavioral guardrail for coding tasks. Use it when the agent should:
 
 - surface assumptions before implementing
-- prefer the simplest viable solution
+- choose the simplest viable solution
 - keep diffs narrow and directly tied to the request
 - define success in testable, verifiable terms
 
-It is especially useful for:
+Best for:
 
 - implementation planning
 - code review
 - bug fixing
 - refactoring
 - debugging
-- any non-trivial task where minimal, surgical changes matter
+- non-trivial changes where minimal, surgical edits matter
+
+Example:
+
+```text
+Use $karpathy-guidelines to fix this bug with the smallest safe change.
+```
+
+### `karpathy-guidelines-zh`
+
+Path: [skills/karpathy-guidelines-zh](./skills/karpathy-guidelines-zh)
+
+A Chinese-first version of the same working style, designed for Chinese prompts and Chinese discussion during planning, review, and implementation.
+
+Best for:
+
+- 中文代码审查
+- 中文需求澄清
+- 中文实现规划
+- 中文 bug 修复
+- 需要用中文定义验证步骤的任务
+
+Example:
+
+```text
+使用 $karpathy-guidelines-zh 先审视这个改动方案，再开始实现。
+```
 
 ## Why This Exists
 
-Andrej Karpathy has pointed out a set of recurring problems in LLM-assisted coding:
+Andrej Karpathy has pointed out several recurring problems in LLM-assisted coding:
 
-- models silently choose an interpretation and run with it
+- models silently pick an interpretation and run with it
 - models overcomplicate simple tasks
 - models touch adjacent code that was not part of the request
 - models complete work without strong success criteria
 
-This repository packages those ideas into a Codex-compatible skill so they can be reused directly in agent workflows.
+This repository turns those observations into Codex-compatible skills that can be reused directly in agent workflows.
 
 ## Repository Structure
 
 ```text
 codex_skillsplus/
 ├─ skills/
-│  └─ karpathy-guidelines/
+│  ├─ karpathy-guidelines/
+│  │  ├─ SKILL.md
+│  │  ├─ agents/openai.yaml
+│  │  └─ references/examples.md
+│  └─ karpathy-guidelines-zh/
 │     ├─ SKILL.md
 │     ├─ agents/openai.yaml
 │     └─ references/examples.md
@@ -55,63 +95,58 @@ codex_skillsplus/
 
 ### Option 1: Copy into your Codex skills directory
 
-Copy the skill folder into your local Codex skills path:
+Copy any skill folder into:
 
 ```text
-$CODEX_HOME/skills/karpathy-guidelines
+$CODEX_HOME/skills/
 ```
 
-If `CODEX_HOME` is not set, the common fallback is:
+If `CODEX_HOME` is not set, a common fallback is:
+
+```text
+~/.codex/skills/
+```
+
+For example:
 
 ```text
 ~/.codex/skills/karpathy-guidelines
+~/.codex/skills/karpathy-guidelines-zh
 ```
 
-### Option 2: Use directly from this repository
+### Option 2: Reference the skill by repository path
 
-If your Codex setup supports referencing a skill by filesystem path, point it at:
+If your Codex environment supports filesystem-path invocation, use:
 
 ```text
 <repo>/skills/karpathy-guidelines
+<repo>/skills/karpathy-guidelines-zh
 ```
 
-## How to Use
+## Usage Notes
 
-Invoke the skill explicitly when you want the agent to slow down, simplify, and verify:
+Use these skills when you want the agent to slow down slightly and produce cleaner, lower-risk changes.
 
-```text
-Use $karpathy-guidelines to review this coding task before making changes.
-```
-
-Example prompts:
-
-- `Use $karpathy-guidelines to fix this bug with the smallest safe change.`
-- `Use $karpathy-guidelines to review this refactor plan and trim unnecessary complexity.`
-- `Use $karpathy-guidelines to define verification steps before implementing the API change.`
-
-## What the Skill Teaches
-
-The skill centers on four principles:
+The two skills share the same core mindset:
 
 1. Think before coding.
-State assumptions, surface ambiguity, and ask when missing details would change the implementation.
-
 2. Keep it simple.
-Implement the minimum code needed for the current requirement, with no speculative architecture.
-
 3. Make surgical changes.
-Touch only the lines required by the request, match existing style, and avoid unrelated cleanup.
-
 4. Drive toward verifiable success.
-Turn vague tasks into concrete checks, tests, or measurable outcomes.
+
+Choose:
+
+- `karpathy-guidelines` for English prompts and English-facing workflows
+- `karpathy-guidelines-zh` for Chinese prompts and Chinese-facing workflows
 
 ## Included References
 
-The skill keeps the main `SKILL.md` lightweight and places concrete examples in:
+Each skill keeps `SKILL.md` concise and stores richer examples in:
 
 - [skills/karpathy-guidelines/references/examples.md](./skills/karpathy-guidelines/references/examples.md)
+- [skills/karpathy-guidelines-zh/references/examples.md](./skills/karpathy-guidelines-zh/references/examples.md)
 
-Load that file only when you need examples of:
+Load those files only when the current task needs concrete examples of:
 
 - hidden assumptions
 - overengineered implementations
@@ -120,7 +155,7 @@ Load that file only when you need examples of:
 
 ## Attribution
 
-This skill is inspired by Andrej Karpathy's public observations on common LLM coding pitfalls and adapted into a Codex-native skill format for reusable agent workflows.
+These skills are inspired by Andrej Karpathy's public observations on common LLM coding pitfalls and adapted into a Codex-native skill format for reusable agent workflows.
 
 ## License
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Karpathy Guidelines 中文版"
+  short_description: "减少常见 LLM 编码失误的中文工作流护栏。"
+  default_prompt: "使用 $karpathy-guidelines-zh 先梳理假设、简化方案并定义验证步骤，再开始实现。"
