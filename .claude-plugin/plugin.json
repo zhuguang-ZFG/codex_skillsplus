@@ -1,0 +1,11 @@
+{
+  "name": "codex-skillsplus",
+  "description": "Reusable Karpathy-inspired coding workflow skills for Claude Code, including English-first and Chinese-first variants",
+  "version": "1.0.0",
+  "author": {
+    "name": "zhuguang-ZFG"
+  },
+  "license": "MIT",
+  "keywords": ["guidelines", "best-practices", "coding", "karpathy", "codex", "bilingual"],
+  "skills": ["./skills/karpathy-guidelines", "./skills/karpathy-guidelines-zh"]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "codex-skillsplus",
+  "id": "codex-skillsplus",
+  "owner": {
+    "name": "zhuguang-ZFG"
+  },
+  "metadata": {
+    "description": "Reusable Karpathy-inspired coding workflow skills with English-first and Chinese-first variants",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "codex-skillsplus",
+      "source": "./",
+      "description": "Karpathy-inspired workflow skills for Claude Code: Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution, with English and Chinese skill variants",
+      "version": "1.0.0",
+      "author": {
+        "name": "zhuguang-ZFG"
+      },
+      "keywords": [
+        "guidelines",
+        "best-practices",
+        "coding",
+        "karpathy",
+        "codex",
+        "bilingual"
+      ],
+      "category": "workflow"
+    }
+  ]
+}

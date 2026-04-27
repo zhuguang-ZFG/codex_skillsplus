@@ -15,6 +15,7 @@ Curated Codex skills for more reliable coding workflows. This repository package
 - Install by copying a skill folder into `$CODEX_HOME/skills/`
 - Start with `karpathy-guidelines` for English workflows
 - Start with `karpathy-guidelines-zh` for Chinese workflows
+- Use [CLAUDE.md](./CLAUDE.md) or [CURSOR.md](./CURSOR.md) for root-instruction integrations
 - Contribute new skills with [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Highlights
@@ -24,6 +25,7 @@ Curated Codex skills for more reliable coding workflows. This repository package
 - English and Chinese documentation
 - Lightweight skill bodies with on-demand references
 - Browseable skill catalog
+- Claude/Cursor compatibility files copied from the upstream layout
 - Repository preview assets for GitHub sharing
 
 ## Included Skills
@@ -78,6 +80,8 @@ See also:
 
 - [Skill Catalog](./skills/index.md)
 - [Contribution Guide](./CONTRIBUTING.md)
+- [Cursor Setup](./CURSOR.md)
+- [Root Claude Instructions](./CLAUDE.md)
 
 ## Why This Exists
 
@@ -97,6 +101,12 @@ codex_skillsplus/
 ├─ docs/
 │  └─ assets/
 │     └─ social-preview.png
+├─ .claude-plugin/
+│  ├─ marketplace.json
+│  └─ plugin.json
+├─ .cursor/
+│  └─ rules/
+│     └─ karpathy-guidelines.mdc
 ├─ skills/
 │  ├─ karpathy-guidelines/
 │  │  ├─ SKILL.md
@@ -107,8 +117,11 @@ codex_skillsplus/
 │  │  ├─ agents/openai.yaml
 │  │  └─ references/examples.md
 │  └─ index.md
+├─ CLAUDE.md
 ├─ CONTRIBUTING.md
 ├─ CONTRIBUTING.zh.md
+├─ CURSOR.md
+├─ EXAMPLES.md
 ├─ README.md
 ├─ README.zh.md
 └─ LICENSE
@@ -151,6 +164,15 @@ If your Codex environment supports filesystem-path invocation, use:
 - Use `karpathy-guidelines` for English prompts and English-facing workflows.
 - Use `karpathy-guidelines-zh` for Chinese prompts and Chinese-facing workflows.
 - Read `references/examples.md` only when the task needs concrete examples.
+
+## Other Integration Files
+
+- [CLAUDE.md](./CLAUDE.md): root instruction file for Claude-style project guidance
+- [CURSOR.md](./CURSOR.md): how to use the committed Cursor rule in this repo and elsewhere
+- [EXAMPLES.md](./EXAMPLES.md): repository-level example set mirroring the upstream layout
+- [`.cursor/rules/karpathy-guidelines.mdc`](./.cursor/rules/karpathy-guidelines.mdc): committed Cursor project rule
+- [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json): Claude plugin definition
+- [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json): marketplace metadata
 
 ## Usage Notes
 

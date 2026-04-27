@@ -16,6 +16,7 @@
 - 提供中英文双语说明
 - 主技能文件精简，复杂示例按需加载
 - 提供可浏览的技能目录页 [skills/index.md](./skills/index.md)
+- 同时保留了 Claude / Cursor 的外围接入文件
 
 ## 当前技能
 
@@ -66,6 +67,8 @@ Use $karpathy-guidelines to fix this bug with the smallest safe change.
 ```
 
 另见：[技能目录](./skills/index.md)
+另见：[CURSOR.md](./CURSOR.md)
+另见：[CLAUDE.md](./CLAUDE.md)
 
 ## 为什么要做这个仓库
 
@@ -147,6 +150,15 @@ $CODEX_HOME/skills/
 
 - 面向英文提示词和英文沟通，用 `karpathy-guidelines`
 - 面向中文提示词和中文沟通，用 `karpathy-guidelines-zh`
+
+## 其他接入文件
+
+- [CLAUDE.md](./CLAUDE.md)：适合根目录指令文件式接入
+- [CURSOR.md](./CURSOR.md)：说明如何在 Cursor 中使用当前仓库规则
+- [EXAMPLES.md](./EXAMPLES.md)：保留了与上游一致的仓库级案例文件
+- [`.cursor/rules/karpathy-guidelines.mdc`](./.cursor/rules/karpathy-guidelines.mdc)：已提交的 Cursor 项目规则
+- [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json)：Claude 插件定义
+- [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json)：插件市场元数据
 
 ## 附带参考内容
 
