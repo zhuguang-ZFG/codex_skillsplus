@@ -1,0 +1,4 @@
+interface:
+  display_name: "Karpathy Guidelines"
+  short_description: "Reduce common LLM coding mistakes during coding and review."
+  default_prompt: "Use $karpathy-guidelines to review this coding task before implementing changes."
