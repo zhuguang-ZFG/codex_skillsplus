@@ -1,6 +1,8 @@
 # CLAUDE.md
 
-Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
+Project-default coding behavior rules for repositories that adopt this file. Unless the user explicitly asks otherwise, treat these principles as mandatory operating constraints for planning, editing, reviewing, debugging, and refactoring work.
+
+Do not treat this file as optional style advice. Use it as the default execution policy for all non-trivial work in repositories that install it.
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 

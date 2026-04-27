@@ -16,6 +16,7 @@ Curated Codex skills for more reliable coding workflows. This repository package
 - Start with `karpathy-guidelines` for English workflows
 - Start with `karpathy-guidelines-zh` for Chinese workflows
 - Use [CLAUDE.md](./CLAUDE.md) or [CURSOR.md](./CURSOR.md) for root-instruction integrations
+- Treat installed guidance as default execution policy for non-trivial work
 - Contribute new skills with [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Highlights
@@ -50,6 +51,8 @@ Best for:
 - debugging
 - non-trivial changes where minimal, surgical edits matter
 
+When active, treat it as a default execution policy rather than optional advice.
+
 Example:
 
 ```text
@@ -69,6 +72,8 @@ Best for:
 - 中文实现规划
 - 中文 bug 修复
 - 需要用中文定义验证步骤的任务
+
+激活后应将其视为默认执行策略，而不是仅供参考的建议。
 
 Example:
 
@@ -167,8 +172,8 @@ If your Codex environment supports filesystem-path invocation, use:
 
 ## Other Integration Files
 
-- [CLAUDE.md](./CLAUDE.md): root instruction file for Claude-style project guidance
-- [CURSOR.md](./CURSOR.md): how to use the committed Cursor rule in this repo and elsewhere
+- [CLAUDE.md](./CLAUDE.md): root instruction file for project-default coding behavior
+- [CURSOR.md](./CURSOR.md): how to use the committed Cursor rule as an always-apply default policy
 - [EXAMPLES.md](./EXAMPLES.md): repository-level example set mirroring the upstream layout
 - [`.cursor/rules/karpathy-guidelines.mdc`](./.cursor/rules/karpathy-guidelines.mdc): committed Cursor project rule
 - [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json): Claude plugin definition
@@ -194,7 +199,7 @@ Important notes:
 
 ## Usage Notes
 
-Use these skills when you want the agent to slow down slightly and produce cleaner, lower-risk changes.
+Use these skills when you want the agent to slow down slightly and produce cleaner, lower-risk changes. When installed as project guidance or explicitly activated as skills, they should be treated as default execution policy for non-trivial work, not as optional style suggestions.
 
 The two skills share the same core mindset:
 

@@ -5,7 +5,7 @@ description: Behavioral guidelines to reduce common LLM coding mistakes. Use whe
 
 # Karpathy Guidelines
 
-Use this skill as a behavioral guardrail before and during coding work. Bias toward clarity, simplicity, and verification instead of silently making assumptions or producing broad speculative changes.
+Use this skill as a default execution policy for non-trivial coding work when it is active. Treat the principles below as mandatory operating constraints unless the user explicitly asks for an exception. Bias toward clarity, simplicity, and verification instead of silently making assumptions or producing broad speculative changes.
 
 These guidelines are inspired by Andrej Karpathy's observations about common LLM coding failure modes. For trivial edits, apply them with judgment rather than forcing a heavyweight process.
 

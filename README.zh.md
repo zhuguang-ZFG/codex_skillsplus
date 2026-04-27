@@ -17,6 +17,7 @@
 - 主技能文件精简，复杂示例按需加载
 - 提供可浏览的技能目录页 [skills/index.md](./skills/index.md)
 - 同时保留了 Claude / Cursor 的外围接入文件
+- 安装后可作为非简单任务的默认执行策略
 
 ## 当前技能
 
@@ -40,6 +41,8 @@
 - 调试
 - 任何需要“小改动、强验证、低副作用”的非简单任务
 
+激活后应把它视为默认执行策略，而不是可有可无的建议。
+
 示例：
 
 ```text
@@ -59,6 +62,8 @@ Use $karpathy-guidelines to fix this bug with the smallest safe change.
 - 中文实现规划
 - 中文 bug 修复
 - 需要用中文定义验证步骤的任务
+
+激活后应把它视为默认执行策略，而不是仅供参考的建议。
 
 示例：
 
@@ -137,7 +142,7 @@ $CODEX_HOME/skills/
 
 ## 使用建议
 
-当你希望代理稍微放慢一点、先想清楚、尽量简化并带着验证去做时，就适合调用这些技能。
+当你希望代理稍微放慢一点、先想清楚、尽量简化并带着验证去做时，就适合调用这些技能。作为项目规则安装或在任务中显式激活后，应将它们视为非简单任务的默认执行策略，而不是普通风格建议。
 
 两套技能共享同样的核心原则：
 
@@ -153,8 +158,8 @@ $CODEX_HOME/skills/
 
 ## 其他接入文件
 
-- [CLAUDE.md](./CLAUDE.md)：适合根目录指令文件式接入
-- [CURSOR.md](./CURSOR.md)：说明如何在 Cursor 中使用当前仓库规则
+- [CLAUDE.md](./CLAUDE.md)：适合作为项目默认行为约束的根目录指令文件
+- [CURSOR.md](./CURSOR.md)：说明如何在 Cursor 中以默认强约束方式使用当前仓库规则
 - [EXAMPLES.md](./EXAMPLES.md)：保留了与上游一致的仓库级案例文件
 - [`.cursor/rules/karpathy-guidelines.mdc`](./.cursor/rules/karpathy-guidelines.mdc)：已提交的 Cursor 项目规则
 - [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json)：Claude 插件定义

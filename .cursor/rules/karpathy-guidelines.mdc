@@ -5,7 +5,9 @@ alwaysApply: true
 
 # Karpathy behavioral guidelines
 
-Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
+Project-default coding behavior rules for repositories that install this Cursor rule. Because this rule is marked `alwaysApply: true`, treat these principles as mandatory operating constraints for planning, editing, reviewing, debugging, and refactoring work unless the user explicitly asks otherwise.
+
+Do not treat this rule as optional style guidance. Use it as the default execution policy for all non-trivial work in repositories that include it.
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
