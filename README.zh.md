@@ -9,6 +9,25 @@
 
 ![Codex Skills Plus 封面图](./docs/assets/social-preview.png)
 
+## 快速上手
+
+如果你是第一次用，直接按下面做：
+
+1. 先选一个 skill：
+   - 英文工作流用 `skills/karpathy-guidelines`
+   - 中文工作流用 `skills/karpathy-guidelines-zh`
+2. 把整个 skill 文件夹复制到本机 Codex skills 目录：
+   - 如果设置了 `CODEX_HOME`，复制到 `$CODEX_HOME/skills/`
+   - 没设置的话，通常复制到 `~/.codex/skills/`
+3. 如果你希望某个项目默认就遵守这些原则，再把下面其中一个放进项目里：
+   - [CLAUDE.md](./CLAUDE.md) 放到项目根目录
+   - 或 [`.cursor/rules/karpathy-guidelines.mdc`](./.cursor/rules/karpathy-guidelines.mdc) 放到 Cursor 项目规则里
+4. 第一次可以直接发下面其中一句：
+   - `Use $karpathy-guidelines to review this task before coding.`
+   - `使用 $karpathy-guidelines-zh 先梳理假设和验证步骤，再开始实现。`
+
+如果你想让仓库从 GitHub 自动把这些规则同步到项目里，往下看“GitHub 同步插件”。
+
 ## 仓库特点
 
 - 提供可直接使用的 Codex skill 目录
@@ -112,7 +131,7 @@ codex_skillsplus/
 
 ### 方式一：复制到本地 Codex skills 目录
 
-把任意 skill 目录复制到：
+把一个或两个 skill 的整个目录复制到：
 
 ```text
 $CODEX_HOME/skills/
@@ -129,6 +148,19 @@ $CODEX_HOME/skills/
 ```text
 ~/.codex/skills/karpathy-guidelines
 ~/.codex/skills/karpathy-guidelines-zh
+```
+
+复制时注意：
+
+- 复制整个 `skills/karpathy-guidelines` 文件夹
+- 复制整个 `skills/karpathy-guidelines-zh` 文件夹
+- 不要只复制单个 `SKILL.md`，目录结构要完整保留
+
+复制后，你本机里最好能看到：
+
+```text
+~/.codex/skills/karpathy-guidelines/SKILL.md
+~/.codex/skills/karpathy-guidelines-zh/SKILL.md
 ```
 
 ### 方式二：按仓库路径引用
@@ -156,6 +188,29 @@ $CODEX_HOME/skills/
 - 面向英文提示词和英文沟通，用 `karpathy-guidelines`
 - 面向中文提示词和中文沟通，用 `karpathy-guidelines-zh`
 
+## 第一次怎么用
+
+如果你不知道第一句该怎么写，可以直接照抄：
+
+英文：
+
+```text
+Use $karpathy-guidelines to fix this bug with the smallest safe change. First list assumptions, then define verification.
+```
+
+中文：
+
+```text
+使用 $karpathy-guidelines-zh 修复这个 bug。先列出假设和验证步骤，再做最小修改。
+```
+
+如果已经成功触发，通常会看到这些表现：
+
+- 代理先讲假设，而不是直接乱改
+- 代理倾向最小实现
+- 代理避免顺手清理无关代码
+- 代理会先说明怎么验证成功
+
 ## 其他接入文件
 
 - [CLAUDE.md](./CLAUDE.md)：适合作为项目默认行为约束的根目录指令文件
@@ -181,6 +236,18 @@ $CODEX_HOME/skills/
 - “安装时立即同步”或“会话刚开始就同步”是否能完全自动，取决于运行时对 hook 的支持
 - 项目根目录检测采用保守策略，检测不到时会安全退出，不会乱写路径
 
+给新手的最简单用法：
+
+1. 先安装插件
+2. 把插件指向一个真实项目
+3. 手动先同步一次
+4. 确认项目里已经出现：
+   - `.codex/skills/karpathy-guidelines`
+   - `.codex/skills/karpathy-guidelines-zh`
+   - `.cursor/rules/karpathy-guidelines.mdc`
+   - `CLAUDE.md`
+5. 然后正常开始写代码
+
 ## 附带参考内容
 
 每个 skill 都让 `SKILL.md` 保持简洁，把更丰富的案例放在：
@@ -194,6 +261,14 @@ $CODEX_HOME/skills/
 - 如何把过度设计改回简单实现
 - 如何避免顺手重构
 - 如何把模糊任务改写成可验证步骤
+
+## 最稳的使用组合
+
+如果你想要“尽量一直生效”，最稳的是三层一起用：
+
+1. 把 skill 安装到 `~/.codex/skills/`
+2. 在项目里放 `CLAUDE.md` 或 Cursor 规则
+3. 在重要任务里显式写一次 `$karpathy-guidelines` 或 `$karpathy-guidelines-zh`
 
 ## 致谢与来源
 

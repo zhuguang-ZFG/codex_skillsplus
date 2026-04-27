@@ -11,13 +11,22 @@ Curated Codex skills for more reliable coding workflows. This repository package
 
 ## Quick Start
 
-- Browse skills: [skills/index.md](./skills/index.md)
-- Install by copying a skill folder into `$CODEX_HOME/skills/`
-- Start with `karpathy-guidelines` for English workflows
-- Start with `karpathy-guidelines-zh` for Chinese workflows
-- Use [CLAUDE.md](./CLAUDE.md) or [CURSOR.md](./CURSOR.md) for root-instruction integrations
-- Treat installed guidance as default execution policy for non-trivial work
-- Contribute new skills with [CONTRIBUTING.md](./CONTRIBUTING.md)
+If you are new, do this:
+
+1. Choose one skill folder:
+   - `skills/karpathy-guidelines` for English
+   - `skills/karpathy-guidelines-zh` for Chinese
+2. Copy the whole folder into your local Codex skills directory:
+   - `$CODEX_HOME/skills/` if `CODEX_HOME` is set
+   - otherwise `~/.codex/skills/`
+3. If you want these rules to apply by default in one project, also copy:
+   - [CLAUDE.md](./CLAUDE.md) into the project root
+   - or [`.cursor/rules/karpathy-guidelines.mdc`](./.cursor/rules/karpathy-guidelines.mdc) if you use Cursor
+4. Start with one of these prompts:
+   - `Use $karpathy-guidelines to review this task before coding.`
+   - `使用 $karpathy-guidelines-zh 先梳理假设和验证步骤，再开始实现。`
+
+If you want the repository to copy guidance into a project from GitHub, see [GitHub Sync Plugin](#github-sync-plugin).
 
 ## Highlights
 
@@ -136,7 +145,7 @@ codex_skillsplus/
 
 ### Option 1: Copy into your Codex skills directory
 
-Copy any skill folder into:
+Copy one or both whole skill folders into:
 
 ```text
 $CODEX_HOME/skills/
@@ -155,6 +164,17 @@ For example:
 ~/.codex/skills/karpathy-guidelines-zh
 ```
 
+Important:
+
+- Copy the whole folder, not only `SKILL.md`
+- Keep the internal files such as `agents/openai.yaml` and `references/`
+- After copying, your local path should look like:
+
+```text
+~/.codex/skills/karpathy-guidelines/SKILL.md
+~/.codex/skills/karpathy-guidelines-zh/SKILL.md
+```
+
 ### Option 2: Reference the skill by repository path
 
 If your Codex environment supports filesystem-path invocation, use:
@@ -169,6 +189,29 @@ If your Codex environment supports filesystem-path invocation, use:
 - Use `karpathy-guidelines` for English prompts and English-facing workflows.
 - Use `karpathy-guidelines-zh` for Chinese prompts and Chinese-facing workflows.
 - Read `references/examples.md` only when the task needs concrete examples.
+
+## First Use Examples
+
+If you are not sure what to type first, copy one of these exactly:
+
+English:
+
+```text
+Use $karpathy-guidelines to fix this bug with the smallest safe change. First list assumptions, then define verification.
+```
+
+Chinese:
+
+```text
+使用 $karpathy-guidelines-zh 修复这个 bug。先列出假设和验证步骤，再做最小修改。
+```
+
+You know it is working when the agent:
+
+- explains assumptions before changing code
+- prefers the smallest reasonable implementation
+- avoids unrelated cleanup
+- explains how success will be verified
 
 ## Other Integration Files
 
@@ -197,9 +240,27 @@ Important notes:
 - install-time or session-start auto-sync depends on what the runtime exposes to hooks
 - project-root detection is best effort and will fail safely if the runtime does not expose a usable target directory
 
+Beginner workflow:
+
+1. Install the plugin.
+2. Point it at a real project.
+3. Run the sync once manually.
+4. Confirm these now exist inside the project:
+   - `.codex/skills/karpathy-guidelines`
+   - `.codex/skills/karpathy-guidelines-zh`
+   - `.cursor/rules/karpathy-guidelines.mdc`
+   - `CLAUDE.md`
+5. Start coding normally.
+
 ## Usage Notes
 
 Use these skills when you want the agent to slow down slightly and produce cleaner, lower-risk changes. When installed as project guidance or explicitly activated as skills, they should be treated as default execution policy for non-trivial work, not as optional style suggestions.
+
+Strongest setup:
+
+1. Install the skill under `~/.codex/skills/`
+2. Put `CLAUDE.md` in the project root or use the Cursor rule
+3. Explicitly invoke the skill on important tasks
 
 The two skills share the same core mindset:
 
