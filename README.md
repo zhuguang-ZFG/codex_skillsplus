@@ -9,13 +9,22 @@ Curated Codex skills for more reliable coding workflows. This repository package
 
 ![Codex Skills Plus social preview](./docs/assets/social-preview.png)
 
+## Quick Start
+
+- Browse skills: [skills/index.md](./skills/index.md)
+- Install by copying a skill folder into `$CODEX_HOME/skills/`
+- Start with `karpathy-guidelines` for English workflows
+- Start with `karpathy-guidelines-zh` for Chinese workflows
+- Contribute new skills with [CONTRIBUTING.md](./CONTRIBUTING.md)
+
 ## Highlights
 
 - Ready-to-use Codex skill folders
 - Focus on practical coding workflows
 - English and Chinese documentation
 - Lightweight skill bodies with on-demand references
-- Browseable skill catalog at [skills/index.md](./skills/index.md)
+- Browseable skill catalog
+- Repository preview assets for GitHub sharing
 
 ## Included Skills
 
@@ -65,7 +74,10 @@ Example:
 使用 $karpathy-guidelines-zh 先审视这个改动方案，再开始实现。
 ```
 
-See also: [Skill Catalog](./skills/index.md)
+See also:
+
+- [Skill Catalog](./skills/index.md)
+- [Contribution Guide](./CONTRIBUTING.md)
 
 ## Why This Exists
 
@@ -95,6 +107,8 @@ codex_skillsplus/
 │  │  ├─ agents/openai.yaml
 │  │  └─ references/examples.md
 │  └─ index.md
+├─ CONTRIBUTING.md
+├─ CONTRIBUTING.zh.md
 ├─ README.md
 ├─ README.zh.md
 └─ LICENSE
@@ -132,6 +146,12 @@ If your Codex environment supports filesystem-path invocation, use:
 <repo>/skills/karpathy-guidelines-zh
 ```
 
+## Choose a Skill
+
+- Use `karpathy-guidelines` for English prompts and English-facing workflows.
+- Use `karpathy-guidelines-zh` for Chinese prompts and Chinese-facing workflows.
+- Read `references/examples.md` only when the task needs concrete examples.
+
 ## Usage Notes
 
 Use these skills when you want the agent to slow down slightly and produce cleaner, lower-risk changes.
@@ -142,11 +162,6 @@ The two skills share the same core mindset:
 2. Keep it simple.
 3. Make surgical changes.
 4. Drive toward verifiable success.
-
-Choose:
-
-- `karpathy-guidelines` for English prompts and English-facing workflows
-- `karpathy-guidelines-zh` for Chinese prompts and Chinese-facing workflows
 
 ## Included References
 
@@ -165,6 +180,10 @@ Load those files only when the current task needs concrete examples of:
 ## Attribution
 
 These skills are inspired by Andrej Karpathy's public observations on common LLM coding pitfalls and adapted into a Codex-native skill format for reusable agent workflows.
+
+## Contributing
+
+New skills are welcome. Follow [CONTRIBUTING.md](./CONTRIBUTING.md) for naming, layout, documentation, and validation expectations.
 
 ## License
 
